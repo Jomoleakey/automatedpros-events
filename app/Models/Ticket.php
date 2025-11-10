@@ -18,9 +18,16 @@ class Ticket extends Model
      */
     protected $fillable = [
         'event_id',
+        // FIX: Add 'name' here! The database error "tickets.name" confirms this column is required.
+        'name',
         'type',
         'price',
         'quantity_available', 
+        'quantity_total',
+        // Add other defensive columns (like 'amount' or 'quantity') if your EventController maps them, 
+        // ensuring they don't cause a future fillable error if the column is present.
+        'amount', 
+        'quantity',
     ];
 
     // --- ELOQUENT RELATIONSHIPS ---
