@@ -2,6 +2,44 @@ Event Ticketing System (Laravel API) - Tester Guide
 
 This document provides the full instructions for setting up the environment, running the necessary servers, and executing the core event creation and booking verification test.
 
+Step 0.9
+Please after downloading the source code from github  https://github.com/Jomoleakey/automatedpros-events ensure you;
+Remember to start with composer install and Create SQLite File
+
+
+You need to create an empty file named database.sqlite inside the database folder of your Laravel project.
+
+Steps 
+Navigate to the database directory within your project folder:
+
+Bash
+
+cd database
+Create the empty SQLite file: Use the touch command to create the file.
+
+Bash
+
+touch database.sqlite
+(Alternatively, you can open your file explorer, go to ...automatedpros-events-main\database, and manually create a new empty file named database.sqlite.)
+
+Return to the project root directory:
+
+Bash
+
+cd ..
+Run Your Original Command: Now that the file exists, the artisan command can proceed with running the migrations and seeding:
+
+Bash
+
+php artisan migrate:fresh --seed
+
+Once you create that empty file, the migrate:fresh command will be able to connect to the SQLite database and create all the necessary tables.  follow the rest of the instructions below 
+
+Please let me know how it goes or any difficulties faced
+
+ 
+
+
 1. Full Setup & Database Reset
 
 Run this command to drop all tables, run all migrations, and re-seed the database with fresh test data.
